@@ -29,7 +29,7 @@ const App = () => {
     setStack([ingredient, ...stack])
   }
 
-  const removeFromBurger = (ingredient, index) => {
+  const removeFromBurger = (index) => {
     const newStack = [...stack]
     newStack.splice(index, 1)
     setStack(newStack)

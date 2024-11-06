@@ -1,3 +1,5 @@
+import Ingredient from "./Ingredient";
+
 const BurgerStack = (props) => {
 
     const handleStack = () => {
@@ -5,10 +7,11 @@ const BurgerStack = (props) => {
             return <h2>Nothing in the stack</h2>
         } else {
             return (                
-                props.stack.map((ingredient, key) => (
-                    <li style={{ backgroundColor: ingredient.color }} key={key}>
-                        {ingredient.name}
-                        <button onClick={() => props.removeFromBurger(ingredient, key)}>x</button>
+                props.stack.map((ingredient, index) => (
+                    <li style={{ backgroundColor: ingredient.color }} key={index}>
+                        {/* {ingredient.name}
+                        <button onClick={() => props.removeFromBurger(ingredient, index)}>x</button> */}
+                        <Ingredient ingredient={ingredient} removeFromBurger={props.removeFromBurger} index={index} btn={"remove"} />
                     </li>
                 ))
             )
